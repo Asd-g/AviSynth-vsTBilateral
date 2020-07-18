@@ -49,7 +49,7 @@ vsTBilateral (clip, clip "ppclip", int "diameterY", int "diameterU", int "diamet
     Default: False.
     
 - kerns\
-    This specifies what kernel is used for the domain weights.\    
+    This specifies what kernel is used for the domain weights.\
     0: Andrews' wave\
     1: El Fallah Ford\
     2: Gaussian\
@@ -60,7 +60,7 @@ vsTBilateral (clip, clip "ppclip", int "diameterY", int "diameterU", int "diamet
     7: Cosine\
     8: Flat\
     9: Inverse\
-    See the following paper for a description of all the kernels and their properties: http://www.prasa.org/proceedings/2003/prasa03-09.pdf\
+    See the following paper for a description of all the kernels and their properties: http://www.prasa.org/proceedings/2003/prasa03-09.pdf \
     Default: 2.
     
 - kerni\
@@ -68,7 +68,7 @@ vsTBilateral (clip, clip "ppclip", int "diameterY", int "diameterU", int "diamet
     Default: 2.
     
 - restype\
-    This specifies how the weights and pixel values are combined to obtain the final result.\    
+    This specifies how the weights and pixel values are combined to obtain the final result.\
     0: Mean (weighted average)\
     1: Median (weighted median)\
     2: CW-Median (weighted median + extra center pixel weight)\
