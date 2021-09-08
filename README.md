@@ -1,16 +1,22 @@
-# Description
+## Description
 
 TBilateral is a spatial smoothing filter that uses the bilateral filtering algorithm. It does a nice job of smoothing while retaining picture structure.
 
 This is [a port of the VapourSynth plugin TBilateral](https://github.com/dubhater/vapoursynth-tbilateral).
 
-# Usage
+### Requirements:
+
+- AviSynth 2.60 / AviSynth+ 3.4 or later
+
+- Microsoft VisualC++ Redistributable Package 2022 (can be downloaded from [here](https://github.com/abbodi1406/vcredist/releases))
+
+### Usage:
 
 ```
 vsTBilateral (clip, clip "ppclip", int "diameterY", int "diameterU", int "diameterV", float "sdevY", float "sdevU", float "sdevV", float "idevY", float "idevU", float "idevV", float "csY", float "csU", float "csV", bool "d2", int "kerns", int "kerni", int "restype", int "y", int "u", int "v")
 ```
 
-## Parameters:
+### Parameters:
 
 - clip\
     A clip to process. It must be in 8..16-bit planar format.
