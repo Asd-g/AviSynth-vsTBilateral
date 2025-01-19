@@ -68,7 +68,7 @@ public:
 
 #define MINS 0.00000000000001
 
-static double kernelValue(double x, double sigma, int kernel)
+static inline double kernelValue(double x, double sigma, int kernel)
 {
 	switch (kernel)
 	{
@@ -80,7 +80,7 @@ static double kernelValue(double x, double sigma, int kernel)
 		return (1.0 / sqrt(1.0 + ((x * x) / (sigma * sigma))));
 	case Gaussian: // Gaussian
 		return (exp(-((x * x) / (2.0 * sigma * sigma))));
-	case HubersMiniMax: // Huber’s mini-max
+	case HubersMiniMax: // Huberâ€™s mini-max
 		if (x <= sigma)
 			return (1.0 / sigma);
 		return (1.0 / x);
@@ -117,7 +117,7 @@ static double kernelValue(double x, double sigma, int kernel)
 // Singular Value Decomposition routine
 // taken from numerical recipes in C.
 
-static double pythag(double a, double b)
+static inline double pythag(double a, double b)
 {
 	double at = fabs(a), bt = fabs(b), ct;
 	if (at > bt)
@@ -135,7 +135,7 @@ static double pythag(double a, double b)
 	return 0.0;
 }
 
-static void svdcmp(double* a, double* w, double* v)
+static inline void svdcmp(double* a, double* w, double* v)
 {
 	int flag, i, its, j, jj, k, l, nm;
 	double c, f, h, s, x, y, z;
@@ -417,7 +417,7 @@ static void svdcmp(double* a, double* w, double* v)
 	}
 }
 
-static int mlre(double* yi, double* wi, int lw, int lh, int cx, int cy, int radius, int diameter, int pixel_max)
+static inline int mlre(double* yi, double* wi, int lw, int lh, int cx, int cy, int radius, int diameter, int pixel_max)
 {
 	wi += static_cast<int64_t>(cy) * diameter;
 	yi += static_cast<int64_t>(cy) * diameter;
