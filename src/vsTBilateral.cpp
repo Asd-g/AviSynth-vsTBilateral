@@ -1,8 +1,13 @@
 #if defined(_WIN32)
 #define _USE_MATH_DEFINES
+#include <cmath>
 #endif
 
 #include <algorithm>
+
+#if !defined(FLT_EPSILON)
+#define FLT_EPSILON 1.19209290E-07F // decimal constant
+#endif
 
 #include "avisynth.h"
 
@@ -80,7 +85,7 @@ static double kernelValue(double x, double sigma, int kernel)
 		return (1.0 / sqrt(1.0 + ((x * x) / (sigma * sigma))));
 	case Gaussian: // Gaussian
 		return (exp(-((x * x) / (2.0 * sigma * sigma))));
-	case HubersMiniMax: // Huber’s mini-max
+	case HubersMiniMax: // Huberâ€™s mini-max
 		if (x <= sigma)
 			return (1.0 / sigma);
 		return (1.0 / x);
